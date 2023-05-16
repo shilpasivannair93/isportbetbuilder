@@ -1,0 +1,34 @@
+<div class="br-whole-container">
+    <div class="br-btn-holder">
+        <button class="round-button" (click)="backToFixtures()">
+            <span class="back-icon">&#8592;</span>
+        </button>
+    </div>
+    <div class="br-builder-header-div">
+        <h1 class="mrg-none">Make it a Bet Builder?</h1>
+    </div>
+    <div class="parent">
+        <div class="child child1">
+            <span>{{currentFixture.KickOffUtc | date}}</span>
+            <span>{{currentFixture.KickOffUtc | utcToLocalTime:'shortTime'}}</span>
+        </div>
+        <div class="child child2">
+            <span>{{currentFixture.Team1Name}} vs {{currentFixture.Team2Name}}</span>
+            <span>{{currentFixture.LeagueName}}</span>
+        </div>
+    </div>
+    <div class="br-select-holder">
+        <div class="select-box br-left-select">
+            <label class="br-label-class" for="market">Markets:</label>
+            <select #market id="market" class="br-select-cls" (change)="setCurrentMarket(market.value)">
+                <option [value]="market.MarketId" *ngFor="let market of markets">{{market.MarketName}}</option>
+            </select>
+        </div>
+        <div class="select-box br-right-select">
+            <label class="br-label-class" for="legs">Legs:</label>
+            <select #leg id="legs" class="br-select-cls" (change)="setCurrentLeg(leg.value)">
+                <option [value]="leg.selectionId" *ngFor="let leg of legs">{{leg.selectionValue}}</option>
+            </select>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+.header-container {
+    background-color: black;
+    padding: 20px;
+    text-align: center;
+}
+
+.header-text {
+    color: white;
+}

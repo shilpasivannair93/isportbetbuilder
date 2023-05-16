@@ -1,0 +1,43 @@
+.fix-list-header {
+  color: white;
+  background-color: red;
+  text-align: center;
+}
+
+.fix-list-holder {
+  background-color: #f1efef;
+}
+
+.fix-list-item {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  list-style: none;
+  border-bottom: 1px solid lightgrey;
+  cursor: pointer;
+}
+
+.fix-full-container {
+  padding: 15px;
+  border: 1px solid lightgrey;
+}
+
+.date-holder {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.date-item {
+  background-color: #ccc;
+  color: black;
+  margin: 5px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.active {
+  background-color: red;
+  color: white;
+}

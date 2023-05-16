@@ -1,0 +1,96 @@
+.br-btn-holder {
+    padding: 10px 0px;
+}
+
+.parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.br-builder-header-div {
+    color: white;
+    background-color: red;
+    padding: 15px 0px 15px 50px;
+    margin: 10px 0px;
+}
+
+.mrg-none {
+    margin: 0;
+}
+
+.child {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: white;
+    width: 50%;
+    color: white;
+    align-items: center;
+}
+
+span {
+    margin: 5px;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.child1 {
+    background-color: red;
+}
+
+.child2 {
+    background-color: black;
+}
+
+.round-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: red;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.back-icon {
+    font-size: 18px;
+    color: white;
+}
+
+.select-box {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.br-left-select {
+    float: left;
+    clear: both;
+    width: 50%;
+    text-align: left;
+}
+
+.br-right-select {
+    float: right;
+    width: 50%;
+    text-align: right;
+}
+
+.br-select-cls {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.br-select-holder {
+    padding: 15px;
+}
+
+.br-label-class {
+    font-weight: bold;
+    margin-right: 5px;
+}
