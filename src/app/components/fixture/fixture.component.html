@@ -1,19 +1,28 @@
 <div class="date-holder">
-    <div *ngFor="let date of dateArray; let i = index" [ngClass]="{ 'date-item': true, 'active': selectedIndex === i }"
-        (click)="toggleActive(i)">
-        {{ date | date:'dd/MM/yyyy' }}
-    </div>
+  <div
+    *ngFor="let date of dateArray; let i = index"
+    [ngClass]="{ 'date-item': true, active: selectedIndex === i }"
+    (click)="toggleActive(i)"
+  >
+    {{ date | date : "dd/MM/yyyy" }}
+  </div>
 </div>
 <div class="fix-full-container">
-    <div *ngFor="let leagueName of leagueNames">
-      <ng-container *ngIf="getFixturesByLeagueName(leagueName).length > 0">
-        <h2 class="fix-list-header">{{ leagueName }}</h2>
-        <ul class="fix-list-holder">
-          <li class="fix-list-item" *ngFor="let fixture of getFixturesByLeagueName(leagueName)"
-              (click)="redirectToBuilderBets(fixture)">
-            {{ fixture.Team1Name }} {{fixture.KickOffUtc | utcToLocalTime:'short'}} {{ fixture.Team2Name }}
-          </li>
-        </ul>
-      </ng-container>
-    </div>
+  <div *ngFor="let leagueName of leagueNames">
+    <ng-container *ngIf="getFixturesByLeagueName(leagueName).length > 0">
+      <h2 class="fix-list-header">{{ leagueName }}</h2>
+      <ul class="fix-list-holder">
+        <li
+          class="fix-list-item"
+          *ngFor="let fixture of getFixturesByLeagueName(leagueName)"
+          (click)="redirectToBuilderBets(fixture)"
+        >
+          <span>{{ fixture.Team1Name }}</span>
+          <span>{{ fixture.KickOffUtc | utcToLocalTime : "short" }}</span>
+          <span>{{ fixture.Team2Name }}</span>
+          <i class="arrow-icon"></i>
+        </li>
+      </ul>
+    </ng-container>
+  </div>
 </div>

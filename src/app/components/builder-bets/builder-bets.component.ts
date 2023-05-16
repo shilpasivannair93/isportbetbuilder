@@ -55,7 +55,6 @@ export class BuilderBetsComponent implements OnInit {
       matchId: this.currentFixture.MatchId
     };
     this.betBuilderService.getBuilderBets(instance).subscribe(bets => {
-      debugger
       this.bets = bets
     });
   }

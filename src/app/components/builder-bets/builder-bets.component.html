@@ -1,7 +1,7 @@
 <div class="br-whole-container">
     <div class="br-btn-holder">
         <button class="round-button" (click)="backToFixtures()">
-            <span class="back-icon">&#8592;</span>
+            <span class="span-class" class="back-icon">&#8592;</span>
         </button>
     </div>
     <div class="br-builder-header-div">
@@ -9,12 +9,12 @@
     </div>
     <div class="parent">
         <div class="child child1">
-            <span>{{currentFixture.KickOffUtc | date}}</span>
-            <span>{{currentFixture.KickOffUtc | utcToLocalTime:'shortTime'}}</span>
+            <span class="span-class">{{currentFixture.KickOffUtc | date}}</span>
+            <span class="span-class">{{currentFixture.KickOffUtc | utcToLocalTime:'shortTime'}}</span>
         </div>
         <div class="child child2">
-            <span>{{currentFixture.Team1Name}} vs {{currentFixture.Team2Name}}</span>
-            <span>{{currentFixture.LeagueName}}</span>
+            <span class="span-class">{{currentFixture.Team1Name}} vs {{currentFixture.Team2Name}}</span>
+            <span class="span-class">{{currentFixture.LeagueName}}</span>
         </div>
     </div>
     <div class="br-select-holder">
@@ -31,4 +31,9 @@
             </select>
         </div>
     </div>
+    <div class="builder-bets">
+      <span class="builder-bets-label">Builder Bets:</span>
+      <span class="builder-bets-value">{{bets.TotalOdds}}</span>
+    </div>
+    <h1>There was no valid data was getting while binding the bets Array.</h1>
 </div>

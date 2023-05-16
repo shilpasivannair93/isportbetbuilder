@@ -29,11 +29,25 @@
     align-items: center;
 }
 
-span {
+.span-class {
     margin: 5px;
     padding: 5px;
     font-weight: bold;
 }
+
+.builder-bets {
+  padding: 15px;
+}
+
+.builder-bets-label {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.builder-bets-value {
+  margin-left: 5px;
+}
+
 
 .child1 {
     background-color: red;
