@@ -36,16 +36,16 @@
 }
 
 .builder-bets {
-  padding: 15px;
+    padding: 15px;
 }
 
 .builder-bets-label {
-  font-weight: bold;
-  margin-right: 5px;
+    font-weight: bold;
+    margin-right: 5px;
 }
 
 .builder-bets-value {
-  margin-left: 5px;
+    margin-left: 5px;
 }
 
 
@@ -107,4 +107,31 @@
 .br-label-class {
     font-weight: bold;
     margin-right: 5px;
+}
+
+.table {
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+.table th {
+    background-color: lightgrey;
+    color: red;
+    padding: 8px;
+}
+
+.table tr:nth-child(odd) {
+    background-color: lightgrey;
+    color: black;
+}
+
+.table tr:nth-child(even) {
+    background-color: white;
+    color: black;
+}
+
+.table td,
+.table th {
+    border: 1px solid black;
+    padding: 8px;
 }

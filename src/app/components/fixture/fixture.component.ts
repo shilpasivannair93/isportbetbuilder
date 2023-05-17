@@ -32,7 +32,7 @@ export class FixtureComponent implements OnInit {
   }
 
   getAllFixtures() {
-    this.betBuilderService.getAllFixtures().subscribe(fixtures => {
+    this.betBuilderService.getAllFixtures().subscribe((fixtures: Fixture[]) => {
       const offsetInMillis = new Date().getTimezoneOffset() * 60 * 1000;
       fixtures.forEach(fixture => {
         const utcTime = new Date(fixture.KickOffUtc).getTime();
@@ -61,7 +61,7 @@ export class FixtureComponent implements OnInit {
     // Filter fixtures by leagueName
     return this.fixtures.filter(fixture => {
       const datePipe = new DatePipe('en-US');
-      const formattedDate = datePipe.transform(fixture.KickOffUtc, 'yyyy-MM-dd');
+      const formattedDate = datePipe.transform(new Date(fixture.KickOffUtc), 'yyyy-MM-dd');
       if (fixture.LeagueName === leagueName && formattedDate === this.selectedDate) {
         return fixture;
       } else {

@@ -14,14 +14,14 @@ export interface Fixture {
 }
 
 export interface Legs {
-    selectionId: number,
-    selectionValue: number
+    selectionId: number;
+    selectionValue: number;
 }
 export interface BuilderBets {
     MatchId: number;
     Legs: number;
     SelectionMarketId: string;
-    BetBuilderSelections: Array<any>;
+    BetBuilderSelections: BetBuilderSelections[];
     TotalOdds: string;
     Pot1count: number;
     Pot2count: number;
@@ -40,4 +40,19 @@ export interface BuilderQueryInstance {
     marketId: string;
     legs: string;
     matchId: string;
+}
+
+export interface BetBuilderSelections {
+    Id: number;
+    MarketId: number;
+    Market: string;
+    Selection: string;
+    RTB: string;
+    Pot: number;
+    Odds: Odds;
+}
+
+export interface Odds {
+    Decimal: string,
+    Fractional: string
 }

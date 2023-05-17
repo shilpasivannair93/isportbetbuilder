@@ -32,8 +32,30 @@
         </div>
     </div>
     <div class="builder-bets">
-      <span class="builder-bets-label">Builder Bets:</span>
-      <span class="builder-bets-value">{{bets.TotalOdds}}</span>
+        <span class="builder-bets-label">Builder Bets:</span>
+        <span class="builder-bets-value" *ngIf="bets?.TotalOdds">{{bets.TotalOdds}}</span>
     </div>
-    <h1>There was no valid data was getting while binding the bets Array.</h1>
+    <div>
+        <ng-container
+            *ngIf="bets?.BetBuilderSelections && bets?.BetBuilderSelections?.length; then betTemp; else noBetTemp"></ng-container>
+        <ng-template #betTemp>
+            <div>
+                <table class="table">
+                    <tr>
+                        <th>Key Stats</th>
+                        <th>Market</th>
+                        <th>Selection</th>
+                    </tr>
+                    <tr *ngFor="let bet of bets?.BetBuilderSelections">
+                        <td>{{bet?.RTB}}</td>
+                        <td>{{bet?.Market}}</td>
+                        <td>{{bet?.Selection}}</td>
+                    </tr>
+                </table>
+            </div>
+        </ng-template>
+        <ng-template #noBetTemp>
+            <div style="padding-left: 15px;">No Data Available</div>
+        </ng-template>
+    </div>
 </div>
