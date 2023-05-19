@@ -33,19 +33,23 @@ export class BuilderBetsComponent implements OnInit {
   }
 
   getAllLegs() {
-    this.betBuilderService.getAllLegs().subscribe(legs => {
-      this.legs = legs;
-      this.currentLeg = String(legs[0].selectionId);
-      this.getAllMarkets();
-    })
+    this.betBuilderService.getAllLegs().subscribe({
+      next: (legs: Legs[]) => {
+        this.legs = legs;
+        this.currentLeg = String(legs[0].selectionId);
+        this.getAllMarkets();
+      }, error: (err) => { console.log(err) }
+    });
   }
 
   getAllMarkets() {
-    this.betBuilderService.getAllMarkets().subscribe(markets => {
-      this.markets = markets;
-      this.currentMarket = markets[0].MarketId;
-      this.getAllBuilderBets();
-    })
+    this.betBuilderService.getAllMarkets().subscribe({
+      next: (markets: Markets[]) => {
+        this.markets = markets;
+        this.currentMarket = markets[0].MarketId;
+        this.getAllBuilderBets();
+      }, error: (err) => { console.log(err) }
+    });
   }
 
   getAllBuilderBets() {
@@ -54,9 +58,10 @@ export class BuilderBetsComponent implements OnInit {
       legs: this.currentLeg,
       matchId: this.currentFixture.MatchId
     };
-    this.betBuilderService.getBuilderBets(instance).subscribe(bets => {
-      this.bets = bets;
-      console.log(bets);
+    this.betBuilderService.getBuilderBets(instance).subscribe({
+      next: (bets: BuilderBets) => {
+        this.bets = bets;
+      }, error: (err) => { console.log(err) }
     });
   }
 
