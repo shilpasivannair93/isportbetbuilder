@@ -32,16 +32,20 @@ export class FixtureComponent implements OnInit {
   }
 
   getAllFixtures() {
-    this.betBuilderService.getAllFixtures().subscribe((fixtures: Fixture[]) => {
-      const offsetInMillis = new Date().getTimezoneOffset() * 60 * 1000;
-      fixtures.forEach(fixture => {
-        const utcTime = new Date(fixture.KickOffUtc).getTime();
-        const localTime = new Date(utcTime + offsetInMillis);
-        fixture.KickOffUtc = localTime.toLocaleString();
-      });
-      this.fixtures = fixtures;
+    this.betBuilderService.getAllFixtures().subscribe({
+      next: (fixtures: Fixture[]) => {
+        const offsetInMillis = new Date().getTimezoneOffset() * 60 * 1000;
+        fixtures.forEach(fixture => {
+          const utcTime = new Date(fixture.KickOffUtc).getTime();
+          const localTime = new Date(utcTime + offsetInMillis);
+          fixture.KickOffUtc = localTime.toLocaleString();
+        });
+        this.fixtures = fixtures;
+      }, error: (err) => { console.log(err) }
     });
   }
+
+
 
   toggleActive(index: number) {
     this.selectedIndex = index;
